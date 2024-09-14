@@ -18,7 +18,7 @@ app.use("/questions", questionRoutes);
 app.use("/answer", answerRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("The Server has Started Running");
 });
 
 const PORT = process.env.PORT || 5000;
