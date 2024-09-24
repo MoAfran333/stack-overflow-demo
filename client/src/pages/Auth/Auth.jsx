@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import icon from "../../assets/icon.png";
 import AboutAuth from "./AboutAuth";
-import { dispatch, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signUp, logIn } from "../../action/auth";
 import "./Auth.css";
