@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bars from "../../assets/bars-solid.svg";
@@ -15,11 +15,11 @@ function Navbar({ handleSlideIn }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogOut = () => {
+  const handleLogOut = useCallback(() => {
     dispatch({ type: "LOGOUT" });
     dispatch(setCurrentUser(null));
     navigate("/");
-  };
+  }, [dispatch, navigate]);
 
   useEffect(() => {
     const token = user?.token;
@@ -30,7 +30,7 @@ function Navbar({ handleSlideIn }) {
       }
     }
     dispatch(setCurrentUser(JSON.parse(localStorage.getItem("Profile"))));
-  }, [user?.token, dispatch]);
+  }, [user?.token, dispatch, handleLogOut]);
 
   return (
     <nav className="main-nav">

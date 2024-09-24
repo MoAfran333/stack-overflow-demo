@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import LeftSidebar from "../../component/leftSidebar/LeftSidebar";
 import Avatar from "../../component/avatar/Avatar";
@@ -9,8 +9,6 @@ import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBirthdayCake, faPen } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../action/currentUser";
 
 function UserProfile({ slideIn }) {
   const { id } = useParams();
